@@ -4,5 +4,7 @@ import glob from 'glob'
 const matcher = glob('**/*.js')
 
 for await (const [filePath] of on(matcher, 'match')) {
-  console.log(filePath)
+  console.log(`./${filePath}`)
 }
+
+console.log('ARE WE GETTING HERE?')
