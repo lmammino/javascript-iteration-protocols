@@ -1,10 +1,6 @@
-function createCountdown (from) {
-  return {
-    [Symbol.iterator]: function * () {
-      for (let i = from; i >= 0; i--) {
-        yield i
-      }
-    }
+function * createCountdown (from) {
+  for (let i = from; i >= 0; i--) {
+    yield i
   }
 }
 
