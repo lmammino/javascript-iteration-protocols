@@ -4,7 +4,7 @@ import glob from 'glob'
 const matcher = glob('**/*.js')
 const ac = new global.AbortController()
 
-matcher.on('end', () => ac.abort())
+matcher.once('end', () => ac.abort())
 
 try {
   for await (const [filePath] of on(matcher, 'match', { signal: ac.signal })) {
